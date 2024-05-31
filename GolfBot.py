@@ -6,11 +6,15 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 OPEN_TIME = '07:00'
 ANTI_TIMEOUT = '06:58'
+username = ""
+password = ""
 
-# options = webdriver.ChromeOptions()
-# options.add_experimental_option("detach", True)
-# options.add_argument("--start-maximized")
-# driver = webdriver.Chrome(options=options)
+with open("login.txt", "r") as file:
+    username = file.readline().strip()
+    password = file.readline().strip()
+    file.close()
+
+
 
 options = webdriver.FirefoxOptions()
 # new tab instead of new window
@@ -18,7 +22,7 @@ options.add_argument("--new-tab")
 driver = webdriver.Firefox(options=options)
 driver.maximize_window()
 
-driver.implicitly_wait(5)
+driver.implicitly_wait(60)
 
 driver.get("https://www.tee-on.com/PubGolf/servlet/com.teeon.teesheet.servlets.golfersection.ComboLanding?CourseCode=RDTL&FromCourseWebsite=true")
 
@@ -33,9 +37,9 @@ member_button.click()
 # Enter the username
 
 username_field = driver.find_element(By.ID, 'Username')
-username_field.send_keys('')
+username_field.send_keys(username)
 password_field = driver.find_element(By.ID, 'Password')
-password_field.send_keys('')
+password_field.send_keys(password)
 
 login_button = driver.find_element(By.ID, 'sign-in-btn')
 login_button.click()
@@ -46,7 +50,7 @@ date_button = driver.find_element(By.XPATH, '/html/body/div[6]/div[2]/div[2]/div
 date_button.click()
 
 # Select the proper time
-time_button = driver.find_element(By.XPATH, '/html/body/div[6]/div[2]/div[2]/div/div/div/div/div/div/div[1]/form/div[2]/select/option[15]')
+time_button = driver.find_element(By.XPATH, '/html/body/div[6]/div[2]/div[2]/div/div/div/div/div/div/div[1]/form/div[2]/select/option[13]')
 time_button.click()
 
 # Select the proper number of holes
@@ -69,24 +73,17 @@ search_button = driver.find_element(By.XPATH, '/html/body/div[6]/div[2]/div[2]/d
 sleep(0.5)
 ActionChains(driver).scroll_to_element(search_button).perform()
 
-# try:
-#     ActionChains(driver).scroll_to_element(search_button).perform()
-# except:
-#     ActionChains(driver).scroll_to_element(search_button).perform()
-#     pass
-
-
 startTime = time(*(map(int, OPEN_TIME.split(':'))))
 while datetime.now().time() < startTime:
     pass
 
 search_button.click()
 
-sleep(1)
+#sleep(1)
 
 # Select the proper time
 time_button = driver.find_element(By.XPATH, '/html/body/div[8]/div[2]/div[2]/div/div/div/div/div/form/div[5]/div[1]/div[1]/a')
 time_button.click()
 
-sleep(3)
+sleep(2)
 driver.refresh()
