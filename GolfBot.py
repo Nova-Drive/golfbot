@@ -14,7 +14,9 @@ with open("login.txt", "r") as file:
     password = file.readline().strip()
     file.close()
 
-
+"""
+GOLFBOT
+"""
 
 options = webdriver.FirefoxOptions()
 # new tab instead of new window
