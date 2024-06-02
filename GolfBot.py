@@ -1,11 +1,11 @@
 from time import sleep
-from datetime import datetime, time
+from datetime import datetime, time, timedelta
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
-OPEN_TIME = '07:00'
-ANTI_TIMEOUT = '06:58'
+OPEN_TIME = '07:00:02'
+ANTI_TIMEOUT = '06:58:00'
 username = ""
 password = ""
 
@@ -26,7 +26,7 @@ driver.implicitly_wait(60)
 
 driver.get("https://www.tee-on.com/PubGolf/servlet/com.teeon.teesheet.servlets.golfersection.ComboLanding?CourseCode=RDTL&FromCourseWebsite=true")
 
-startTime = time(*(map(int, ANTI_TIMEOUT.split(':'))))
+startTime = datetime.strptime(ANTI_TIMEOUT, '%H:%M:%S').time()
 while datetime.now().time() < startTime:
     pass
 
@@ -73,7 +73,7 @@ search_button = driver.find_element(By.XPATH, '/html/body/div[6]/div[2]/div[2]/d
 sleep(0.5)
 ActionChains(driver).scroll_to_element(search_button).perform()
 
-startTime = time(*(map(int, OPEN_TIME.split(':'))))
+startTime = datetime.strptime(ANTI_TIMEOUT, '%H:%M:%S').time()
 while datetime.now().time() < startTime:
     pass
 
