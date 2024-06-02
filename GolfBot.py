@@ -73,7 +73,7 @@ search_button = driver.find_element(By.XPATH, '/html/body/div[6]/div[2]/div[2]/d
 sleep(0.5)
 ActionChains(driver).scroll_to_element(search_button).perform()
 
-startTime = datetime.strptime(START_TIME, '%H:%M:%S').time()
+startTime = datetime.strptime(OPEN_TIME, '%H:%M:%S').time()
 while datetime.now().time() < startTime:
     pass
 
