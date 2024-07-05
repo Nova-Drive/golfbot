@@ -83,9 +83,10 @@ search_button.click()
 
 #sleep(1)
 
+
 # Select the proper time
-time_button = driver.find_element(By.XPATH, '/html/body/div[8]/div[2]/div[2]/div/div/div/div/div/form/div[5]/div[1]/div[1]/a')
-time_button.click()
+# time_button = driver.find_element(By.XPATH, '/html/body/div[8]/div[2]/div[2]/div/div/div/div/div/form/div[5]/div[1]/div[1]/a')
+# time_button.click()
 
 # sleep(2)
 # driver.refresh()
