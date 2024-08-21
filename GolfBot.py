@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
-OPEN_TIME = '07:00:00.445000'
+OPEN_TIME = '07:00:00.440000'
 ANTI_TIMEOUT = '06:58:00'
 
 username = ""
@@ -51,7 +51,7 @@ date_button = driver.find_element(By.XPATH, '/html/body/div[6]/div[2]/div[2]/div
 date_button.click()
 
 # Select the proper time
-time_button = driver.find_element(By.XPATH, '/html/body/div[6]/div[2]/div[2]/div/div/div/div/div/div/div[1]/form/div[2]/select/option[12]')
+time_button = driver.find_element(By.XPATH, '/html/body/div[6]/div[2]/div[2]/div/div/div/div/div/div/div[1]/form/div[2]/select/option[11]')
 time_button.click()
 
 # Select the proper number of holes
