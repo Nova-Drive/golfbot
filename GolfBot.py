@@ -6,7 +6,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 #OPEN_TIME = '07:00:00.420000'
 
-OPEN_TIME = '18:37:00.000000'
+OPEN_TIME = '18:38:00.000000'
 # ANTI_TIMEOUT = '06:58:00'
 
 username = ""
