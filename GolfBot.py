@@ -6,7 +6,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 #OPEN_TIME = '07:00:00.420000'
 
-OPEN_TIME = '19:10:00.000000'
+OPEN_TIME = '19:15:00.000000'
 # ANTI_TIMEOUT = '06:58:00'
 
 username = ""
@@ -22,7 +22,7 @@ with open("login.txt", "r") as file:
 options = webdriver.FirefoxOptions()
 # new tab instead of new window
 options.add_argument("--new-tab")
-options.add_argument("user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1")
+options.set_preference("general.useragent.override", "user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1")
 # options.add_experimental_option("detach", True)
 driver = webdriver.Firefox(options=options)
 driver.maximize_window()
