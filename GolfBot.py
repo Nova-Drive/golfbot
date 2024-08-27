@@ -4,9 +4,10 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
-#OPEN_TIME = '07:00:00.420000'
+OPEN_TIME = '07:00:00.420000'
 
-OPEN_TIME = '19:15:00.000000'
+# testing
+# OPEN_TIME = '19:15:00.000000'
 # ANTI_TIMEOUT = '06:58:00'
 
 username = ""
