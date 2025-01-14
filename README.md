@@ -1,4 +1,4 @@
-Golfbot: My solution for always getting the time I want.
+Golfbot: My solution for always getting the tee time time I want.
 
 I use Selenium in python to open a browser that automatically enter login details, select desired tee time details, and automatically select the tee time when the new times are added for the day.
 
