@@ -34,9 +34,9 @@ driver.get(
     "https://www.tee-on.com/PubGolf/servlet/com.teeon.teesheet.servlets.golfersection.ComboLanding?CourseCode=RDTL&FromCourseWebsite=true"
 )
 
-startTime = datetime.strptime(ANTI_TIMEOUT, "%H:%M:%S").time()
-while datetime.now().time() < startTime:
-    pass
+# startTime = datetime.strptime(ANTI_TIMEOUT, "%H:%M:%S").time()
+# while datetime.now().time() < startTime:
+#     pass
 
 # Hit the member button
 member_button = driver.find_element(
