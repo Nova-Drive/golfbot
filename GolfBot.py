@@ -4,8 +4,11 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
-OPEN_TIME = "07:00:00.235000"
-ANTI_TIMEOUT = "06:58:00"
+OPEN_TIME = "07:00:00.270000"
+
+# testing
+# OPEN_TIME = '19:15:00.000000'
+# ANTI_TIMEOUT = '06:58:00'
 
 username = ""
 password = ""
@@ -22,8 +25,7 @@ with open("login.txt", "r") as file:
 
 options = webdriver.ChromeOptions()
 options.add_argument("--new-tab")
-driver = webdriver.Chrome(options=options)
-
+driver = webdriver.Firefox(options=options)
 driver.maximize_window()
 
 driver.implicitly_wait(60)
@@ -42,7 +44,7 @@ member_button = driver.find_element(
 )
 member_button.click()
 
-# Enter the username
+# # Enter the username
 
 username_field = driver.find_element(By.ID, "Username")
 username_field.send_keys(username)
@@ -88,7 +90,7 @@ redtail_button = driver.find_element(
 )
 redtail_button.click()
 
-# Select search button
+# # Select search button
 
 scrollable_element = driver.find_element(By.XPATH, '//*[@id="scrollbar-wrapper"]')
 driver.execute_script(
@@ -105,7 +107,15 @@ print(startTime)
 while datetime.now().time() < startTime:
     pass
 
+# scrollable_element = driver.find_element(By.XPATH, '//*[@id="scrollbar-wrapper"]')
+# driver.execute_script("arguments[0].scroll(0, arguments[0].scrollHeight);", scrollable_element)
+
+search_button = driver.find_element(
+    By.XPATH, "/html/body/div[6]/div[2]/div[2]/div/div/div/div/div/div/div[1]/form/a[2]"
+)
+# ActionChains(driver).scroll_to_element(search_button).perform()
 search_button.click()
+
 
 # sleep(1)
 
