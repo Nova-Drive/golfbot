@@ -19,13 +19,13 @@ with open("login.txt", "r") as file:
     file.close()
 
 
-# options = webdriver.FirefoxOptions()
-# options.add_argument("--new-tab")
-# driver = webdriver.Firefox(options=options)
-
-options = webdriver.ChromeOptions()
+options = webdriver.FirefoxOptions()
 options.add_argument("--new-tab")
 driver = webdriver.Firefox(options=options)
+
+#options = webdriver.ChromeOptions()
+#options.add_argument("--new-tab")
+#driver = webdriver.Firefox(options=options)
 driver.maximize_window()
 
 driver.implicitly_wait(60)
