@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
-OPEN_TIME = "07:00:00.030000"
+OPEN_TIME = "07:00:00.010000"
 
 # testing
 # OPEN_TIME = '19:15:00.000000'
